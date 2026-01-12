@@ -9,6 +9,13 @@
       >
         {{ link.label }}
       </a>
+      <a
+        v-else-if="link.href === '/docs' && isOnDocsPage"
+        class="nav-link"
+        @click="handleDocsClick"
+      >
+        {{ link.label }}
+      </a>
       <nuxt-link
         v-else-if="!link.isButton"
         class="nav-link"
@@ -29,13 +36,30 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
 import { bounceFadeIn, isMobile } from 'atomic'
 
 import { navLinks } from '.'
 
+const route = useRoute()
+const router = useRouter()
 const emit = defineEmits(['closeDrawer'])
+
+const isOnDocsPage = computed(() => {
+  return route.path.startsWith('/docs')
+})
+
+function handleDocsClick(event: Event): void {
+  event.preventDefault()
+  emit('closeDrawer')
+
+  if (!isOnDocsPage.value) {
+    router.push('/docs/getting-started/introduction')
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  } else {
+    router.push('/docs/getting-started/introduction')
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
+}
 
 onMounted(() => {
   if (isMobile()) {
