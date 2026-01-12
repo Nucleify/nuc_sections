@@ -6,16 +6,8 @@ export const navLinks: NucNavLinkInterface[] = [
     href: '/home',
   },
   {
-    label: 'Services',
-    href: '/services',
-  },
-  {
-    label: 'About',
-    href: '/about',
-  },
-  {
-    label: 'Blog',
-    href: '/blog',
+    label: 'Docs',
+    href: '/docs',
   },
   {
     label: 'Login',
