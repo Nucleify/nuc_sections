@@ -7,7 +7,7 @@ export const navLinks: NucNavLinkInterface[] = [
   },
   {
     label: 'Docs',
-    href: '/docs',
+    href: '/docs/getting-started/introduction',
   },
   {
     label: 'Login',

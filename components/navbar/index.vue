@@ -2,7 +2,7 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <nuxt-link class="application-header" to="/home">
+      <a class="application-header" href="/home">
         <ad-logo ad-type="main" />
 
         <ad-heading
@@ -10,7 +10,7 @@
           text="Nucleify"
           class="application-header-text"
         />
-      </nuxt-link>
+      </a>
 
       <nuc-navbar-links />
       <ad-button
