@@ -13,8 +13,9 @@
         "
         class="contact-content-description"
       />
-      <ad-button
-        class="contact-content-button caterpillar"
+      <nuc-hexagons-button
+        class="contact-content-button"
+        text
         label="Mail"
         @click="navigateToUrl('mailto:business@atomic-it.org')"
       />
