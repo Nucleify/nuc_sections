@@ -2,13 +2,20 @@
   <div class="nav-links-container">
     <template v-for="link in navLinks" :key="link.label">
       <a
-        v-if="link.href === '/home' || link.href === '/login'"
+        v-if="link.href === '/home'"
         :href="link.href"
-        :class="link.isButton ? link.class : 'nav-link'"
+        class="nav-link"
         @click="emit('closeDrawer')"
       >
         {{ link.label }}
       </a>
+      <nuc-hexagons-button
+        v-else-if="link.isButton"
+        :class="link.class"
+        :label="link.label"
+        text
+        @click="navigateToUrl(link.href)"
+      />
       <a
         v-else-if="link.href === '/docs' && isOnDocsPage"
         class="nav-link"
@@ -36,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { bounceFadeIn, isMobile } from 'atomic'
+import { bounceFadeIn, isMobile, navigateToUrl } from 'atomic'
 
 import { navLinks } from '.'
 
