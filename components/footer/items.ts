@@ -1,39 +1,35 @@
 export const columns = [
-  // Entities
-  [
-    { name: 'Entities', header: true, url: '/entities' },
-    { name: 'Activities', url: '/activity-log' },
-    { name: 'Articles', url: '/entities/articles' },
-    { name: 'Contacts', url: '/entities/contacts' },
-    { name: 'Money', url: '/entities/money' },
-    { name: 'Users', url: '/admin' },
-  ],
   // Services
   [
     { name: 'Services', header: true, url: '#' },
-    { name: 'Open Source', url: '#' },
-    { name: 'Data Storage', url: '#' },
-    { name: 'Data Migration', url: '#' },
-    { name: 'Data Integration', url: '#' },
-    { name: 'Data Analysis', url: '#' },
-    { name: 'Page Builder', url: '#' },
+    { name: 'Business Websites', url: '#' },
+    { name: 'E-commerce Stores', url: '#' },
+    { name: 'Custom CMS', url: '#' },
+    { name: 'Landing Pages', url: '#' },
+    { name: 'Website Redesign', url: '#' },
   ],
-  // About
+  // Company
   [
-    { name: 'About', header: true, url: '#' },
-    { name: 'Purpose', url: '#' },
-    { name: 'Collaboration', url: '#' },
-    { name: 'Support Us', url: '#' },
-    { name: 'License', url: '#' },
-    { name: 'Contact', url: '#' },
+    { name: 'Company', header: true, url: '#' },
+    { name: 'About Us', url: '#' },
+    { name: 'Our Process', url: '#' },
+    { name: 'Contact', url: '#contact' },
   ],
-  // Blog
+  // Resources
   [
-    { name: 'Blog', header: true, url: '#' },
-    { name: "The Importance of Open Source in Today's World", url: '#' },
-    { name: 'How to Automate Your Data Pipeline', url: '#' },
-    { name: 'Maximizing Data Security', url: '#' },
-    { name: 'Building a Scalable Website', url: '#' },
-    { name: 'The Best Tools for Every Business', url: '#' },
+    { name: 'Resources', header: true },
+    { name: 'Pricing', url: '#' },
+    { name: 'Free Consultation', url: '#start' },
+    { name: 'Terms & Privacy', url: '#' },
+    { name: 'FAQ', url: '#faq' },
+  ],
+  // Documentation
+  [
+    { name: 'Documentation', header: true },
+    { name: 'Getting Started', url: '/docs/getting-started/introduction' },
+    { name: 'Atomic Design', url: '/docs/core-concepts/atomic-design' },
+    { name: 'Modules', url: '/docs/core-concepts/modules' },
+    { name: 'Philosophy', url: '/docs/about/philosophy' },
+    { name: 'Code Standards', url: '/docs/about/code-standards' },
   ],
 ]

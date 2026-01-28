@@ -1,65 +1,64 @@
 <template>
   <div id="contact">
-    <div class="contact-content container">
-      <ad-paragraph class="contact-content-title">
-        <span>Contact</span>&nbsp;
-        <span>Us</span>
-      </ad-paragraph>
+    <div class="contact-banner container">
+      <div class="contact-decoration contact-decoration-left">
+        <Icon name="mdi:email-outline" />
+      </div>
+      
+      <div class="contact-left">
+        <span class="contact-badge">LET'S CONNECT</span>
+        <h3 class="contact-heading">Have a project in mind?</h3>
+        <p class="contact-text">
+          Let's talk about how we can bring your vision to life.
+          <span class="highlight">Quick response guaranteed.</span>
+        </p>
+        
+        <div class="contact-features">
+          <div class="feature">
+            <Icon name="mdi:clock-fast" />
+            <span>8h response</span>
+          </div>
+          <div class="feature">
+            <Icon name="mdi:credit-card-off-outline" />
+            <span>No upfront payment</span>
+          </div>
+          <div class="feature">
+            <Icon name="mdi:thumb-up-outline" />
+            <span>Satisfaction guaranteed</span>
+          </div>
+        </div>
+      </div>
 
-      <ad-paragraph
-        text="
-          If you have any questions, need assistance, or would like to learn more
-          about our project, don’t hesitate to reach out. We’re here to help!
-        "
-        class="contact-content-description"
-      />
-      <nuc-hexagons-button
-        class="contact-content-button"
-        text
-        label="Mail"
-        @click="navigateToUrl('mailto:business@atomic-it.org')"
-      />
+      <div class="contact-divider"></div>
+
+      <div class="contact-right">
+        <ad-button
+          class="contact-button"
+          label="Get in Touch"
+          @click="showDialog = true"
+        />
+        <span class="contact-email">business@nucleify.io</span>
+      </div>
+      
+      <div class="contact-decoration contact-decoration-right">
+        <Icon name="mdi:rocket-launch-outline" />
+      </div>
     </div>
+
+    <Dialog
+      v-model:visible="showDialog"
+      :modal="true"
+      :dismissable-mask="true"
+      :draggable="false"
+      :show-header="false"
+    >
+      <nuc-section-email-us @success="showDialog = false" />
+    </Dialog>
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  bounceFadeIn,
-  navigateToUrl,
-  useScrollTrigger,
-  useSplitText,
-} from 'atomic'
+import { ref } from 'vue'
 
-useSplitText().animate(
-  '.contact-content-title',
-  500,
-  0.2,
-  0.1,
-  'power2.out',
-  true,
-  'top 60%'
-)
-useSplitText().animate(
-  '.contact-content-description',
-  500,
-  0.3,
-  0.05,
-  'power2.out',
-  true,
-  'top 70%'
-)
-
-useScrollTrigger(
-  '.contact-content-description',
-  () => {
-    bounceFadeIn('.contact-content-button', {
-      delay: 0.5,
-      duration: 0.15,
-    })
-  },
-  {
-    start: 'top 20%',
-  }
-)
+const showDialog = ref(false)
 </script>

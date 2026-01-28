@@ -9,11 +9,10 @@
       >
         {{ link.label }}
       </a>
-      <nuc-hexagons-button
+      <ad-button
         v-else-if="link.isButton"
         :class="link.class"
         :label="link.label"
-        text
         @click="navigateToUrl(link.href)"
       />
       <a
@@ -67,28 +66,4 @@ function handleDocsClick(event: Event): void {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }
 }
-
-onMounted(() => {
-  if (isMobile()) {
-    bounceFadeIn('.nav-links-container .nav-link', {
-      delay: 0,
-      duration: 0.05,
-      stagger: 0.15,
-    })
-    bounceFadeIn('.nav-links-container .login-button', {
-      delay: 1,
-      duration: 0.2,
-    })
-  } else {
-    bounceFadeIn('.nav-links-container .nav-link', {
-      delay: 2.2,
-      duration: 0.05,
-      stagger: 0.15,
-    })
-    bounceFadeIn('.nav-links-container .login-button', {
-      delay: 2.9,
-      duration: 0.2,
-    })
-  }
-})
 </script>

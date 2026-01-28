@@ -27,26 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import gsap from 'gsap'
-
-import { bounceFadeIn, useNavbar } from 'atomic'
+import { useNavbar } from 'atomic'
 
 import { NucNavbarDrawer, NucNavbarLinks } from './components'
 
 const { navbarExpanded, toggleNavbar } = useNavbar()
-
-onMounted(() => {
-  bounceFadeIn('.navbar .logo', { delay: 2.2, duration: 0.3 })
-  gsap.fromTo(
-    '.navbar .application-header-text',
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.2, delay: 2.4 }
-  )
-  gsap.to('.navbar', {
-    opacity: 1,
-    duration: 0.3,
-    ease: 'power2.out',
-    delay: 2.2,
-  })
-})
 </script>

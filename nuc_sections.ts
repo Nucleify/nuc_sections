@@ -3,6 +3,7 @@ import type { App } from 'vue'
 import {
   NucSectionCategory,
   NucSectionContact,
+  NucSectionEmailUs,
   NucSectionFaq,
   NucSectionFooter,
   NucSectionNavbar,
@@ -15,6 +16,7 @@ export function registerNucSections(app: App<Element>): void {
   app
     .component('nuc-section-category', NucSectionCategory)
     .component('nuc-section-contact', NucSectionContact)
+    .component('nuc-section-email-us', NucSectionEmailUs)
     .component('nuc-section-faq', NucSectionFaq)
     .component('nuc-section-footer', NucSectionFooter)
     .component('nuc-section-navbar', NucSectionNavbar)
