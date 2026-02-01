@@ -15,6 +15,7 @@
     span {
       font-family: $font-inter-sans-serif;
       display: inline-block;
+      color: transparent;
       background: linear-gradient(135deg, $primary-color, $primary-white-green-text-color);
       background-clip: text;
     }
