@@ -59,7 +59,7 @@
         <div class="form-group checkbox-group">
           <ad-checkbox
             ad-type="main"
-            id="consent"
+            inputId="consent"
             v-model="form.consent"
             :binary="true"
             :invalid="!!errors.consent"

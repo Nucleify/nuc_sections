@@ -17,7 +17,7 @@ export const columns = [
   ],
   // Resources
   [
-    { name: 'Resources', header: true },
+    { name: 'Resources', header: true, url: '#' },
     { name: 'Pricing', url: '#' },
     { name: 'Free Consultation', url: '#start' },
     { name: 'Terms & Privacy', url: '#' },
@@ -25,7 +25,7 @@ export const columns = [
   ],
   // Documentation
   [
-    { name: 'Documentation', header: true },
+    { name: 'Documentation', header: true, url: '#' },
     { name: 'Getting Started', url: '/docs/getting-started/introduction' },
     { name: 'Atomic Design', url: '/docs/core-concepts/atomic-design' },
     { name: 'Modules', url: '/docs/core-concepts/modules' },
