@@ -32,11 +32,7 @@
       <div class="contact-divider"></div>
 
       <div class="contact-right">
-        <ad-button
-          class="contact-button"
-          label="Get in Touch"
-          @click="showDialog = true"
-        />
+        <nuc-section-email-us-dialog button-class="contact-button" />
         <span class="contact-email">business@nucleify.io</span>
       </div>
       
@@ -44,21 +40,5 @@
         <Icon name="mdi:rocket-launch-outline" />
       </div>
     </div>
-
-    <Dialog
-      v-model:visible="showDialog"
-      :modal="true"
-      :dismissable-mask="true"
-      :draggable="false"
-      :show-header="false"
-    >
-      <nuc-section-email-us @success="showDialog = false" />
-    </Dialog>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const showDialog = ref(false)
-</script>
