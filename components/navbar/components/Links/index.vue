@@ -1,39 +1,18 @@
 <template>
   <div class="nav-links-container">
     <template v-for="link in navLinks" :key="link.label">
-      <a
-        v-if="link.href === '/home'"
-        :href="link.href"
-        class="nav-link"
-        @click="emit('closeDrawer')"
-      >
-        {{ link.label }}
-      </a>
       <ad-button
-        v-else-if="link.isButton"
+        v-if="link.isButton"
         :class="link.class"
         :label="link.label"
-        @click="navigateToUrl(link.href)"
+        @click="handleButtonClick(link.href)"
       />
-      <a
-        v-else-if="link.href === '/docs' && isOnDocsPage"
-        class="nav-link"
-        @click="handleDocsClick"
-      >
-        {{ link.label }}
-      </a>
-      <nuxt-link
-        v-else-if="!link.isButton"
-        class="nav-link"
-        :to="link.href"
-        @click="emit('closeDrawer')"
-      >
-        {{ link.label }}
-      </nuxt-link>
       <nuxt-link
         v-else
         :to="link.href"
-        :class="link.class"
+        :external="link.href === '/home'"
+        class="nav-link"
+        @click="emit('closeDrawer')"
       >
         {{ link.label }}
       </nuxt-link>
@@ -42,28 +21,16 @@
 </template>
 
 <script setup lang="ts">
-import { bounceFadeIn, isMobile, navigateToUrl } from 'atomic'
+import { useRouter } from 'nuxt/app'
 
 import { navLinks } from '.'
 
-const route = useRoute()
-const router = useRouter()
 const emit = defineEmits(['closeDrawer'])
 
-const isOnDocsPage = computed(() => {
-  return route.path.startsWith('/docs')
-})
+const router = useRouter()
 
-function handleDocsClick(event: Event): void {
-  event.preventDefault()
+async function handleButtonClick(href: string): Promise<void> {
   emit('closeDrawer')
-
-  if (!isOnDocsPage.value) {
-    router.push('/docs/getting-started/introduction')
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  } else {
-    router.push('/docs/getting-started/introduction')
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }
+  await router.push(href)
 }
 </script>
