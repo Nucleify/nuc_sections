@@ -36,5 +36,15 @@
 </template>
 
 <script setup lang="ts">
-import { columns } from './items'
+import { useRoute } from 'nuxt/app'
+import { computed } from 'vue'
+
+import { getColumns } from './items'
+
+const route = useRoute()
+
+const columns = computed(() => {
+  const lang = (route.params.lang as string) || 'en'
+  return getColumns(lang)
+})
 </script>

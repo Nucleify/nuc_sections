@@ -2,7 +2,7 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <a class="application-header" href="/home">
+      <a class="application-header" :href="`/${lang}/home`">
         <ad-logo ad-type="main" />
 
         <ad-heading
@@ -27,9 +27,14 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'nuxt/app'
+import { computed } from 'vue'
+
 import { useNavbar } from 'atomic'
 
 import { NucNavbarDrawer, NucNavbarLinks } from './components'
 
+const route = useRoute()
+const lang = computed(() => (route.params.lang as string) || 'en')
 const { navbarExpanded, toggleNavbar } = useNavbar()
 </script>
