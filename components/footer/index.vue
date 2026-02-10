@@ -38,13 +38,15 @@
 <script setup lang="ts">
 import { useRoute } from 'nuxt/app'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { getColumns } from './items'
 
 const route = useRoute()
+const { t } = useI18n()
 
 const columns = computed(() => {
   const lang = (route.params.lang as string) || 'en'
-  return getColumns(lang)
+  return getColumns(lang, t)
 })
 </script>

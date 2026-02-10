@@ -15,15 +15,17 @@
 <script setup lang="ts">
 import { useRoute } from 'nuxt/app'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { getNavLinks } from '.'
 
 const emit = defineEmits(['closeDrawer'])
 
 const route = useRoute()
+const { t } = useI18n()
 
 const navLinks = computed(() => {
   const lang = (route.params.lang as string) || 'en'
-  return getNavLinks(lang)
+  return getNavLinks(lang, t)
 })
 </script>

@@ -1,5 +1,6 @@
 .navbar {
   .navbar-drawer-toggler {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 44px;
@@ -8,14 +9,6 @@
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
-    display: block;
-    
-    span {  
-      position: relative;
-      top: 2px;
-      font-size: 1.5em;
-      color: $white-text-color;
-    }
 
     .p-button-label {
       display: none;

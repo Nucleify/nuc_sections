@@ -1,7 +1,7 @@
 <template>
   <ad-button
     :class="props.buttonClass"
-    :label="props.buttonLabel"
+    :label="props.buttonLabel || $t('form-get-in-touch')"
     :icon="props.buttonIcon"
     @click="showDialog = true"
   >
@@ -33,7 +33,7 @@ import { ref } from 'vue'
 import type { NucEmailUsDialogPropsInterface } from './types'
 
 const props = withDefaults(defineProps<NucEmailUsDialogPropsInterface>(), {
-  buttonLabel: 'Get in Touch',
+  buttonLabel: '',
   buttonClass: '',
   buttonIcon: 'mdi:message-text-outline',
   buttonStrong: '',
@@ -41,4 +41,3 @@ const props = withDefaults(defineProps<NucEmailUsDialogPropsInterface>(), {
 
 const showDialog = ref(false)
 </script>
-

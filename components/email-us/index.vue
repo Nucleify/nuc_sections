@@ -2,7 +2,7 @@
   <ad-card id="email-us">
     <template #content>
       <form class="email-us-form" @submit.prevent="submitForm">
-        <div v-for="field in emailUsTextFields" :key="field.id" class="form-group">
+        <div v-for="field in fields" :key="field.id" class="form-group">
           <ad-label :label="field.label" :for="field.id" />
           <component
             :is="getComponent(field.component)"
@@ -26,32 +26,33 @@
             :binary="true"
             :invalid="!!errors.consent"
           />
-          <ad-label label="I accept the data processing" for="consent" />
+          <ad-label :label="$t('form-consent')" for="consent" />
           <small v-if="errors.consent" class="error-message">{{ errors.consent }}</small>
         </div>
 
         <ad-button
           type="submit"
           class="submit-button"
-          :label="isSubmitting ? 'Sending...' : 'START YOUR PROJECT'"
+          :label="isSubmitting ? $t('form-sending') : $t('form-submit')"
           :disabled="isSubmitting"
         />
       </form>
 
       <div class="email-us-footer">
-        <span class="response-text">We respond personally</span>
-        <span class="response-badge">WITHIN 8 HOURS</span>
+        <span class="response-text">{{ $t('form-response-text') }}</span>
+        <span class="response-badge">{{ $t('form-response-badge') }}</span>
       </div>
     </template>
   </ad-card>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { getComponent } from 'atomic'
 
-import { emailUsFormFieldKeys, emailUsTextFields } from './constants'
+import { emailUsFormFieldKeys, getEmailUsTextFields } from './constants'
 import type {
   ContactFormDataInterface,
   ContactFormErrorsInterface,
@@ -59,6 +60,9 @@ import type {
 import { submitContactForm } from './utils'
 
 const emit = defineEmits(['success'])
+const { t } = useI18n()
+
+const fields = computed(() => getEmailUsTextFields(t))
 
 const form = ref<ContactFormDataInterface>({
   name: '',

@@ -1,43 +1,50 @@
-export function getColumns(lang: string) {
+import type { Composer } from 'vue-i18n'
+
+export function getColumns(lang: string, t: Composer['t']) {
   return [
-    // Services
     [
-      { name: 'Services', header: true, url: '#' },
-      { name: 'Business Websites', url: '#' },
-      { name: 'E-commerce Stores', url: '#' },
-      { name: 'Custom CMS', url: '#' },
-      { name: 'Landing Pages', url: '#' },
-      { name: 'Website Redesign', url: '#' },
+      { name: t('footer-services'), header: true, url: '#' },
+      { name: t('footer-business-websites'), url: '#' },
+      { name: t('footer-ecommerce'), url: '#' },
+      { name: t('footer-custom-cms'), url: '#' },
+      { name: t('footer-landing-pages'), url: '#' },
+      { name: t('footer-website-redesign'), url: '#' },
     ],
-    // Company
     [
-      { name: 'Company', header: true, url: '#' },
-      { name: 'About Us', url: '#' },
-      { name: 'Our Process', url: '#' },
-      { name: 'Contact', url: '#contact' },
+      { name: t('footer-company'), header: true, url: '#' },
+      { name: t('footer-about'), url: '#' },
+      { name: t('footer-process'), url: '#' },
+      { name: t('footer-contact'), url: '#contact' },
     ],
-    // Resources
     [
-      { name: 'Resources', header: true, url: '#' },
-      { name: 'Pricing', url: '#' },
-      { name: 'Free Consultation', url: '#start' },
-      { name: 'Terms & Privacy', url: '#' },
-      { name: 'FAQ', url: '#faq' },
+      { name: t('footer-resources'), header: true, url: '#' },
+      { name: t('footer-pricing'), url: '#' },
+      { name: t('footer-consultation'), url: '#start' },
+      { name: t('footer-terms'), url: '#' },
+      { name: t('footer-faq'), url: '#faq' },
     ],
-    // Documentation
     [
-      { name: 'Documentation', header: true, url: '#' },
+      { name: t('footer-documentation'), header: true, url: '#' },
       {
-        name: 'Getting Started',
+        name: t('footer-getting-started'),
         url: `/${lang}/docs/getting-started/introduction`,
       },
       {
-        name: 'Atomic Design',
+        name: t('footer-atomic-design'),
         url: `/${lang}/docs/core-concepts/atomic-design`,
       },
-      { name: 'Modules', url: `/${lang}/docs/core-concepts/modules` },
-      { name: 'Philosophy', url: `/${lang}/docs/about/philosophy` },
-      { name: 'Code Standards', url: `/${lang}/docs/about/code-standards` },
+      {
+        name: t('footer-modules'),
+        url: `/${lang}/docs/core-concepts/modules`,
+      },
+      {
+        name: t('footer-philosophy'),
+        url: `/${lang}/docs/about/philosophy`,
+      },
+      {
+        name: t('footer-code-standards'),
+        url: `/${lang}/docs/about/code-standards`,
+      },
     ],
   ]
 }

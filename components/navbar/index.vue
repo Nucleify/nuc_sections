@@ -13,6 +13,7 @@
       </a>
 
       <nuc-navbar-links />
+      <nuc-lang-switcher />
       <ad-button
         class="navbar-drawer-toggler"
         :icon="navbarExpanded ? 'hidden' : 'prime:align-justify'"
@@ -22,6 +23,7 @@
     </div>
     <nuc-navbar-drawer v-model:visible="navbarExpanded">
       <nuc-navbar-links @close-drawer="navbarExpanded = false" />
+      <nuc-lang-switcher />
     </nuc-navbar-drawer>
   </nav>
 </template>

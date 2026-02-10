@@ -6,25 +6,25 @@
       </div>
       
       <div class="contact-left">
-        <span class="contact-badge">LET'S CONNECT</span>
-        <h3 class="contact-heading">Have a project in mind?</h3>
+        <span class="contact-badge">{{ $t('contact-badge') }}</span>
+        <h3 class="contact-heading">{{ $t('contact-heading') }}</h3>
         <p class="contact-text">
-          Let's talk about how we can bring your vision to life.
-          <span class="highlight">Quick response guaranteed.</span>
+          {{ $t('contact-text') }}
+          <span class="highlight">{{ $t('contact-text-highlight') }}</span>
         </p>
         
         <div class="contact-features">
           <div class="feature">
             <Icon name="mdi:clock-fast" />
-            <span>8h response</span>
+            <span>{{ $t('contact-feat-response') }}</span>
           </div>
           <div class="feature">
             <Icon name="mdi:credit-card-off-outline" />
-            <span>No upfront payment</span>
+            <span>{{ $t('contact-feat-payment') }}</span>
           </div>
           <div class="feature">
             <Icon name="mdi:thumb-up-outline" />
-            <span>Satisfaction guaranteed</span>
+            <span>{{ $t('contact-feat-satisfaction') }}</span>
           </div>
         </div>
       </div>

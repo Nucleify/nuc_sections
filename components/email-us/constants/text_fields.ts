@@ -1,34 +1,38 @@
+import type { Composer } from 'vue-i18n'
+
 import type { FormFieldInterface } from '../types'
 
-export const emailUsTextFields: FormFieldInterface[] = [
-  {
-    id: 'name',
-    label: 'Name',
-    component: 'input-text',
-    placeholder: 'Enter your name',
-    autocomplete: 'name',
-  },
-  {
-    id: 'email',
-    label: 'Email',
-    component: 'input-text',
-    type: 'email',
-    placeholder: 'Enter your email address',
-    autocomplete: 'email',
-  },
-  {
-    id: 'phone',
-    label: 'Phone (optional)',
-    component: 'input-text',
-    type: 'tel',
-    placeholder: 'Enter your phone number',
-    autocomplete: 'tel',
-  },
-  {
-    id: 'message',
-    label: "What's on your mind?",
-    component: 'textarea',
-    placeholder: 'Tell us what you need...',
-    rows: 4,
-  },
-]
+export function getEmailUsTextFields(t: Composer['t']): FormFieldInterface[] {
+  return [
+    {
+      id: 'name',
+      label: t('form-name-label'),
+      component: 'input-text',
+      placeholder: t('form-name-placeholder'),
+      autocomplete: 'name',
+    },
+    {
+      id: 'email',
+      label: t('form-email-label'),
+      component: 'input-text',
+      type: 'email',
+      placeholder: t('form-email-placeholder'),
+      autocomplete: 'email',
+    },
+    {
+      id: 'phone',
+      label: t('form-phone-label'),
+      component: 'input-text',
+      type: 'tel',
+      placeholder: t('form-phone-placeholder'),
+      autocomplete: 'tel',
+    },
+    {
+      id: 'message',
+      label: t('form-message-label'),
+      component: 'textarea',
+      placeholder: t('form-message-placeholder'),
+      rows: 4,
+    },
+  ]
+}
