@@ -3,6 +3,7 @@ import type { NucQuestionObjectInterface } from 'atomic'
 export interface NucSectionFaqInterface {
   questions?: NucQuestionObjectInterface | NucQuestionObjectInterface[]
   site?: SiteType
+  lang?: string
 }
 
 export interface UseSplitQuestionsInterface {

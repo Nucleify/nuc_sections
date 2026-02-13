@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'nuxt/app'
+
 import type { NucQuestionObjectInterface, NucSectionFaqInterface } from 'atomic'
 import { questionRequests, useSplitQuestions } from 'atomic'
 
@@ -32,14 +34,19 @@ const props = defineProps<NucSectionFaqInterface>()
 const column1 = ref<NucQuestionObjectInterface[]>([])
 const column2 = ref<NucQuestionObjectInterface[]>([])
 
-const { getSiteQuestions, resultsBySite } = questionRequests()
+const route = useRoute()
+
+const lang = computed(() => props.lang || route.params.lang || 'en')
+
+const { getSiteQuestionsByLang, resultsByLang } = questionRequests()
 
 onMounted(() => {
-  if (props.site) getSiteQuestions(props.site, false)
+  getSiteQuestionsByLang(props.site, lang.value, false)
 })
 
 watchEffect(() => {
-  const questions = props.questions || resultsBySite.value
+  const questions =
+    props.questions || resultsByLang.value?.length ? resultsByLang.value : []
   if (!questions) return
   ;({ column1: column1.value, column2: column2.value } =
     useSplitQuestions(questions))
