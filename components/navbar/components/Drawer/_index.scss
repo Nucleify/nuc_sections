@@ -35,6 +35,16 @@
     border-top: 0;
     border-bottom: 0;
 
+    .p-drawer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .nuc-lang-switcher {
+        margin-top: 5rem;
+      }
+    }
+
     .p-drawer-close-button {
       background: transparent !important;
       box-shadow: none !important;
