@@ -1,4 +1,4 @@
-.p-dialog-mask {
+.p-dialog-mask:has(#email-us) {
   backdrop-filter: blur(0.5em);
   z-index: 9999 !important;
 
