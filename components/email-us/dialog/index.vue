@@ -1,12 +1,10 @@
 <template>
-  <ad-button
+  <nuc-submit-button
     :class="props.buttonClass"
     :label="props.buttonLabel || $t('form-get-in-touch')"
     :icon="props.buttonIcon"
     @click="showDialog = true"
-  >
-    <strong v-if="props.buttonStrong">{{ props.buttonStrong }}</strong>
-  </ad-button>
+  />
 
   <client-only>
     <Dialog
@@ -22,7 +20,7 @@
         }
       }"
     >
-      <nuc-section-email-us @success="showDialog = false" />
+      <nuc-section-email-us @success="handleEmailSuccess" />
     </Dialog>
   </client-only>
 </template>
@@ -40,4 +38,8 @@ const props = withDefaults(defineProps<NucEmailUsDialogPropsInterface>(), {
 })
 
 const showDialog = ref(false)
+
+function handleEmailSuccess(): void {
+  showDialog.value = false
+}
 </script>

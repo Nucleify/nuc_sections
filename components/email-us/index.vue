@@ -30,9 +30,9 @@
           <small v-if="errors.consent" class="error-message">{{ errors.consent }}</small>
         </div>
 
-        <ad-button
-          type="submit"
+        <nuc-submit-button
           class="submit-button"
+          type="submit"
           :label="isSubmitting ? $t('form-sending') : $t('form-submit')"
           :disabled="isSubmitting"
         />
@@ -47,6 +47,7 @@
 </template>
 
 <script setup lang="ts">
+import { navigateTo } from 'nuxt/app'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -60,7 +61,7 @@ import type {
 import { submitContactForm } from './utils'
 
 const emit = defineEmits(['success'])
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const fields = computed(() => getEmailUsTextFields(t))
 
@@ -89,7 +90,10 @@ async function submitForm(): Promise<void> {
     form,
     errors,
     isSubmitting,
-    onSuccess: () => emit('success'),
+    onSuccess: () => {
+      emit('success')
+      navigateTo(`/${locale.value}/thank-you`)
+    },
   })
 }
 </script>
