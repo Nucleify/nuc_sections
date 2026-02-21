@@ -7,9 +7,9 @@ import { validateContactForm } from './validate_form'
 export async function submitContactForm(
   options: SubmitFormOptionsInterface
 ): Promise<void> {
-  const { form, errors, isSubmitting, onSuccess } = options
+  const { form, errors, isSubmitting, onSuccess, t } = options
 
-  const validationErrors = validateContactForm(form.value)
+  const validationErrors = validateContactForm(form.value, t)
   errors.value = validationErrors
 
   if (Object.keys(validationErrors).length > 0) {
@@ -29,8 +29,8 @@ export async function submitContactForm(
       phone: form.value.phone,
       message: form.value.message,
     },
-    onSuccess: (response) => {
-      flashToast(response.message || 'Message sent successfully!', 'success')
+    onSuccess: () => {
+      flashToast(t('form-success-message'), 'success')
       form.value = {
         name: '',
         email: '',

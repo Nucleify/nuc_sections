@@ -16,11 +16,17 @@ export interface ContactFormErrorsInterface {
   consent?: string
 }
 
+export type TranslateFunctionType = (
+  key: string,
+  params?: Record<string, number | string>
+) => string
+
 export interface SubmitFormOptionsInterface {
   form: Ref<ContactFormDataInterface>
   errors: Ref<ContactFormErrorsInterface>
   isSubmitting: Ref<boolean>
   onSuccess: () => void
+  t: TranslateFunctionType
 }
 
 import type { ComponentType } from 'atomic'

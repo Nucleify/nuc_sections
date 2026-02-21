@@ -90,6 +90,7 @@ async function submitForm(): Promise<void> {
     form,
     errors,
     isSubmitting,
+    t,
     onSuccess: () => {
       emit('success')
       navigateTo(`/${locale.value}/thank-you`)

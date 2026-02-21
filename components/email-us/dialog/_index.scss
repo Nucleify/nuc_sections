@@ -32,7 +32,7 @@
   }
 }
 
-body:has(#home, #offer) {
+body:has(#offer) {
   .p-toast-message {
     top: 6rem !important;
   }
