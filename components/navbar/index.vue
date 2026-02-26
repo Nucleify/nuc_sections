@@ -12,19 +12,21 @@
         />
       </a>
 
-      <nuc-navbar-links />
+
+      <nuc-section-email-us-dialog />
+      <!-- <nuc-navbar-links />
       <nuc-lang-switcher />
       <ad-button
         class="navbar-drawer-toggler"
         :icon="navbarExpanded ? 'hidden' : 'prime:align-justify'"
         aria-label="Menu"
         @click="toggleNavbar()"
-      />
+      /> -->
     </div>
-    <nuc-navbar-drawer v-model:visible="navbarExpanded">
+    <!-- <nuc-navbar-drawer v-model:visible="navbarExpanded">
       <nuc-navbar-links @close-drawer="navbarExpanded = false" />
       <nuc-lang-switcher />
-    </nuc-navbar-drawer>
+    </nuc-navbar-drawer> -->
   </nav>
 </template>
 

@@ -3,6 +3,7 @@
     :class="props.buttonClass"
     :label="props.buttonLabel || $t('form-get-in-touch')"
     :icon="props.buttonIcon"
+    variant="primary"
     @click="showDialog = true"
   />
 

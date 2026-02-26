@@ -12,13 +12,15 @@
             :placeholder="field.placeholder"
             :invalid="!!errors[field.id]"
             :autocomplete="field.autocomplete"
-            :rows="field.rows"
+            :options="field.options"
+            :option-label="field.options ? 'label' : undefined"
+            :option-value="field.options ? 'value' : undefined"
             ad-type="main"
           />
           <small v-if="errors[field.id]" class="error-message">{{ errors[field.id] }}</small>
         </div>
 
-        <div class="form-group checkbox-group">
+        <div class="form-group checkbox-group" v-tooltip.left="t('form-consent-tooltip')">
           <ad-checkbox
             ad-type="main"
             inputId="consent"
@@ -31,8 +33,8 @@
         </div>
 
         <nuc-submit-button
-          class="submit-button"
           type="submit"
+          variant="primary"
           :label="isSubmitting ? $t('form-sending') : $t('form-submit')"
           :disabled="isSubmitting"
         />
@@ -66,10 +68,8 @@ const { t, locale } = useI18n()
 const fields = computed(() => getEmailUsTextFields(t))
 
 const form = ref<ContactFormDataInterface>({
-  name: '',
   email: '',
-  phone: '',
-  message: '',
+  website_type: '',
   consent: false,
 })
 

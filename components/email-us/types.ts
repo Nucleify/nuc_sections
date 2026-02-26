@@ -1,18 +1,16 @@
 import type { Ref } from 'vue'
 
+import type { ComponentType } from 'atomic'
+
 export interface ContactFormDataInterface {
-  name: string
   email: string
-  phone: string
-  message: string
+  website_type: string
   consent: boolean
 }
 
 export interface ContactFormErrorsInterface {
-  name?: string
   email?: string
-  phone?: string
-  message?: string
+  website_type?: string
   consent?: string
 }
 
@@ -29,14 +27,12 @@ export interface SubmitFormOptionsInterface {
   t: TranslateFunctionType
 }
 
-import type { ComponentType } from 'atomic'
-
 export interface FormFieldInterface {
   id: keyof Omit<ContactFormDataInterface, 'consent'>
   label: string
   component: ComponentType
   type?: string
-  placeholder: string
+  placeholder?: string
   autocomplete?: string
-  rows?: number
+  options?: { label: string; value: string }[]
 }

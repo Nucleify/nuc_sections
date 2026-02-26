@@ -25,7 +25,8 @@
       text-decoration: none;
       z-index: 999;
 
-      h1 {
+      &-text {
+        display: none;
         color: $white-text-color;
         font-size: 1.5em;
         margin: 0;
@@ -33,13 +34,21 @@
     }
   }
 
-  .iconify {
-    font-size: 2rem;
-    color: $white-text-color !important;
+  .nuc-submit-button {
+    margin-top: 0;
   }
 
   @media (min-width: $md) {
     max-height: 100px;
+
+
+    .container {  
+      .application-header {
+        &-text {
+          display: block;
+        }
+      }
+    }
   }
 }
 

@@ -1,34 +1,28 @@
 @import 'dialog';
 
 #email-us {
+  background: $p-card-background;
   position: relative;
   padding: 0;
   width: 100%;
 
   .p-inputtext,
+  .p-select,
   .p-textarea {
-    background: rgba(#000, 0.4) !important;
+    background: $p-card-background;
 
     &:not(.p-invalid) {
       border: 1px solid rgba($primary-color, 0.38) !important;
-      color: #fff !important;
       transition: all 0.2s ease;
-
-      &::placeholder {
-        color: rgb(255 255 255 / 78%);
-      }
-
-      &:focus {
-        border-color: rgba($primary-color, 0.6) !important;
-        box-shadow: 0 0 0 3px rgba($primary-color, 0.18) !important;
-      }
-
-      &:hover:not(:focus) {
-        border-color: rgba($primary-color, 0.5) !important;
-      }
     }
   }
-  
+
+  .p-checkbox:not(.p-invalid) {
+    .p-checkbox-box {
+      border: 1px solid rgba($primary-color, 0.38) !important;
+    }
+  }
+
   .email-us-form {
     display: flex;
     flex-direction: column;
@@ -43,12 +37,10 @@
     label {
       font-size: $font-size-sm;
       font-weight: 600;
-      color: rgb(255 255 255 / 98%);
       margin-bottom: 0.5rem;
 
       .optional {
         font-weight: 400;
-        color: rgb(255 255 255 / 75%);
       }
     }
 
@@ -72,12 +64,11 @@
         width: 22px;
         height: 22px;
         border-radius: 4px;
-        border: 1.5px solid rgba($primary-color, 0.45) !important;
-        background: rgba(#000, 0.35) !important;
+        background: $p-card-background;
         transition: all 0.2s ease;
 
         .p-checkbox-icon {
-          color: #000;
+          color: $primary-white-text-color;
         }
 
         &:hover:not(.p-highlight) {
@@ -94,7 +85,6 @@
     label {
       margin-bottom: 0;
       font-weight: 500;
-      color: rgb(255 255 255 / 95%);
       cursor: pointer;
     }
 
@@ -104,20 +94,13 @@
     }
   }
 
-  .submit-button {
+  .nuc-submit-button {
     width: 100%;
     padding: 1rem 1.5rem !important;
     font-size: $font-size-sm;
     font-weight: 700 !important;
-    letter-spacing: 0.025em;
     border-radius: $small-border-radius !important;
     margin-top: 0.5rem;
-    color: #000 !important;
-    box-shadow: 0 4px 24px rgba($primary-color, 0.45) !important;
-
-    &:hover:not(:disabled) {
-      box-shadow: 0 8px 32px rgba($primary-color, 0.55) !important;
-    }
   }
 
   .email-us-footer {
@@ -135,7 +118,6 @@
 
     .response-text {
       font-size: $font-size-sm;
-      color: rgb(255 255 255 / 95%);
     }
 
     .response-badge {

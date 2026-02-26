@@ -24,18 +24,14 @@ export async function submitContactForm(
     url: apiUrl() + '/contact-form',
     method: 'POST',
     data: {
-      name: form.value.name,
       email: form.value.email,
-      phone: form.value.phone,
-      message: form.value.message,
+      website_type: form.value.website_type,
     },
     onSuccess: () => {
       flashToast(t('form-success-message'), 'success')
       form.value = {
-        name: '',
         email: '',
-        phone: '',
-        message: '',
+        website_type: '',
         consent: false,
       }
       onSuccess()
