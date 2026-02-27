@@ -2,7 +2,7 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <a class="application-header" :href="`/${lang}/home`">
+      <a class="application-header" :href="`/${lang}/home`" aria-label="Home">
         <ad-logo ad-type="main" />
 
         <ad-heading
@@ -13,7 +13,10 @@
       </a>
 
 
-      <nuc-section-email-us-dialog />
+      <div class="navbar-actions">
+        <nuc-dark-mode-toggler />
+        <nuc-section-email-us-dialog />
+      </div>
       <!-- <nuc-navbar-links />
       <nuc-lang-switcher />
       <ad-button

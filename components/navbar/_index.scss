@@ -10,7 +10,7 @@
   box-shadow: $box-shadow-none;
   border: $border-none;
   border-radius: $border-radius-none;
-  padding: 1em;
+  padding: 1rem;
 
   .container {
     display: flex;
@@ -24,23 +24,32 @@
       gap: 1em;
       text-decoration: none;
       z-index: 999;
+      color: inherit;
 
       &-text {
         display: none;
-        color: $white-text-color;
         font-size: 1.5em;
         margin: 0;
       }
     }
   }
 
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .nuc-lang-switcher {
+    display: none;
+  }
+
   .nuc-submit-button {
     margin-top: 0;
+    white-space: nowrap;
   }
 
   @media (min-width: $md) {
     max-height: 100px;
-
 
     .container {  
       .application-header {
@@ -48,6 +57,10 @@
           display: block;
         }
       }
+    }
+
+    .nuc-lang-switcher {
+      display: flex;
     }
   }
 }

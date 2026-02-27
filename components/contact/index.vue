@@ -33,7 +33,9 @@
 
       <div class="contact-right">
         <nuc-section-email-us-dialog button-class="contact-button" />
-        <span class="contact-email">business@nucleify.io</span>
+        <a href="mailto:business@nucleify.io" class="contact-email">
+          business@nucleify.io
+        </a>
       </div>
       
       <div class="contact-decoration contact-decoration-right">

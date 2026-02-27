@@ -18,8 +18,8 @@ export function getColumns(lang: string, t: Composer['t']): FooterLink[][] {
     ],
     [
       { name: t('footer-company'), header: true, url: `#${lang}/home` },
-      { name: t('footer-about'), url: `#${lang}/home` },
-      { name: t('footer-process'), url: `#${lang}/home` },
+      { name: t('footer-about'), url: `/${lang}/about-us#start` },
+      { name: t('footer-process'), url: `/${lang}/process` },
       { name: t('footer-contact'), url: '#contact' },
       { name: t('footer-faq'), url: '#faq' },
     ],

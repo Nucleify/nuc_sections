@@ -1,5 +1,6 @@
 <template>
-  <div class="faq-section container">
+  <div class="faq-section">
+    <nuc-grid-background class="faq-grid" />
     <ad-paragraph class="faq-section-header">
       <span>F</span>
       <span>A</span>
@@ -12,7 +13,6 @@
         v-if="isMobileView && allQuestions.length"
         :panels="allQuestions"
         ad-type="main"
-        :hexagons="true"
       />
       <!-- Desktop: two columns, layout q1|q2, q3|q4... -->
       <template v-if="!isMobileView">
@@ -20,13 +20,11 @@
           v-if="column1.length"
           :panels="column1"
           ad-type="main"
-          :hexagons="true"
         />
         <ad-accordion
           v-if="column2.length"
           :panels="column2"
           ad-type="main"
-          :hexagons="true"
         />
       </template>
     </div>

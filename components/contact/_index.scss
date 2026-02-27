@@ -87,7 +87,7 @@
   .contact-text {
     font-size: 1rem;
     line-height: 1.6;
-    color: rgba($white-text-color, 0.7);
+    color: rgba($white-text-color-rgb, 0.7);
     margin: 0;
     max-width: 400px;
 
@@ -108,7 +108,7 @@
       align-items: center;
       gap: 0.5em;
       font-size: 0.85rem;
-      color: rgba($white-text-color, 0.6);
+      color: rgba($white-text-color-rgb, 0.6);
 
       .iconify {
         font-size: 1.1rem;
@@ -137,21 +137,20 @@
     padding: 0.85rem 2.5rem;
     font-weight: 600;
     font-size: 0.95rem;
-    color: #000 !important;
     box-shadow: 0 4px 24px rgba($primary-color, 0.4);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba($primary-color, 0.5);
     }
   }
 
   .contact-email {
     font-size: 0.85rem;
-    color: rgba($white-text-color, 0.5);
+    color: rgba($white-text-color-rgb, 0.5);
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
+    text-decoration: none;
 
     &:hover {
       color: $primary-color;
@@ -231,5 +230,59 @@
         right: 4em;
       }
     }
+  }
+}
+
+html:not(.p-dark) #contact {
+  .contact-banner {
+    background: linear-gradient(145deg, #0b2a1d 0%, #103828 35%, #0c2e20 65%, #081f16 100%);
+    border: none;
+    box-shadow:
+      0 4px 16px rgb(0 0 0 / 8%),
+      0 12px 40px rgba(#0e3325, 0.12);
+
+    &::before {
+      background: linear-gradient(90deg, transparent, rgba(#34d399, 0.4), transparent);
+    }
+
+    &::after {
+      background: linear-gradient(90deg, transparent, rgba(#34d399, 0.2), transparent);
+    }
+  }
+
+  .contact-heading {
+    color: #f0f5f3;
+  }
+
+  .contact-text {
+    color: rgba(#d1e8de, 0.75);
+
+    .highlight {
+      color: #6ee7b7;
+    }
+  }
+
+  .contact-features .feature {
+    color: rgba(#d1e8de, 0.6);
+
+    .iconify {
+      color: #34d399;
+    }
+  }
+
+  .contact-divider {
+    background: linear-gradient(180deg, transparent, rgba(#34d399, 0.3), transparent);
+  }
+
+  .contact-email {
+    color: rgba(#d1e8de, 0.45);
+
+    &:hover {
+      color: #34d399;
+    }
+  }
+
+  .contact-decoration .iconify {
+    color: #34d399;
   }
 }

@@ -1,17 +1,16 @@
 <template>
   <section id="footer">
+    <nuc-grid-background />
     <div class="footer-cta">
       <ad-heading :tag="2" :text="t('footer-cta-heading')" class="cta-heading" />
       <p class="cta-subheading">{{ t('footer-cta-subheading') }}</p>
-      <nuxt-link to="#contact" class="cta-button">
-        {{ t('footer-cta-button') }}
-      </nuxt-link>
+      <nuc-section-email-us-dialog />
     </div>
 
     <div class="footer-content-container">
       <div class="top">
         <div class="brand">
-          <ad-anchor href="#start" class="header">
+          <ad-anchor :href="`/${route.params.lang}/home#start`" class="header">
             <ad-logo :dimensions="isMobile() ? 36 : 48" ad-type="main" />
             <ad-heading :tag="3" text="Nucleify" class="name" />
           </ad-anchor>
@@ -41,15 +40,25 @@
 
       <div class="bottom">
         <div class="company-info">
-          <span>{{ t('footer-company-name') }}</span>
+          <a :href="companyLink" target="_blank">
+            {{ t('footer-company-name') }}
+          </a>
           <span class="separator">|</span>
-          <span>{{ t('footer-company-nip') }}</span>
+          <a :href="companyLink" target="_blank">
+            {{ t('footer-company-nip') }}
+          </a>
           <span class="separator">|</span>
-          <span>{{ t('footer-company-address') }}</span>
+          <a :href="companyLink" target="_blank">
+            {{ t('footer-company-address') }}
+          </a>
           <span class="separator">|</span>
-          <span>{{ t('footer-company-email') }}</span>
+          <a :href="`mailto:${t('footer-company-email')}`">
+            {{ t('footer-company-email') }}
+          </a>
         </div>
-        <p class="copyright">{{ t('footer-copyright', { year }) }}</p>
+        <span class="copyright">
+          {{ t('footer-copyright', { year }) }}
+        </span>
       </div>
     </div>
     <nuc-animation-hexagons />
@@ -68,6 +77,9 @@ import { getColumns } from './items'
 const route = useRoute()
 const { t } = useI18n()
 const year = new Date().getFullYear()
+
+const companyLink =
+  'https://aleo.com/pl/firma/atomic-it-spolka-z-ograniczona-odpowiedzialnoscia'
 
 const columns = computed(() => {
   const lang = (route.params.lang as string) || 'en'
