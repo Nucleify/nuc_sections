@@ -24,11 +24,11 @@ export function getColumns(lang: string, t: Composer['t']): FooterLink[][] {
       { name: t('footer-faq'), url: '#faq' },
     ],
     [
-      { name: t('footer-legal'), header: true, url: '#' },
-      { name: t('footer-privacy-policy'), url: `#${lang}/privacy-policy` },
-      { name: t('footer-terms'), url: `#${lang}/terms` },
-      { name: t('footer-cookies'), url: `#${lang}/cookies` },
-      { name: t('footer-gdpr'), url: `#${lang}/gdpr` },
+      { name: t('footer-legal'), header: true, url: `/${lang}/privacy-policy` },
+      { name: t('footer-privacy-policy'), url: `/${lang}/privacy-policy` },
+      { name: t('footer-terms'), url: `/${lang}/terms-of-service` },
+      { name: t('footer-cookies'), url: `/${lang}/cookies` },
+      { name: t('footer-gdpr'), url: `/${lang}/gdpr` },
     ],
   ]
 }
