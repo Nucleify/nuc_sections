@@ -9,12 +9,27 @@ export interface FooterLink {
 export function getColumns(lang: string, t: Composer['t']): FooterLink[][] {
   return [
     [
-      { name: t('footer-services'), header: true, url: '#services' },
-      { name: t('footer-business-websites'), url: '#services' },
-      { name: t('footer-ecommerce'), url: '#services' },
-      { name: t('footer-landing-pages'), url: '#services' },
-      { name: t('footer-website-redesign'), url: '#services' },
-      { name: t('footer-custom-projects'), url: '#services' },
+      { name: t('footer-services'), header: true, url: `/${lang}/services` },
+      {
+        name: t('footer-business-websites'),
+        url: `/${lang}/services/business-websites`,
+      },
+      {
+        name: t('footer-ecommerce'),
+        url: `/${lang}/services/ecommerce-stores`,
+      },
+      {
+        name: t('footer-landing-pages'),
+        url: `/${lang}/services/landing-pages`,
+      },
+      {
+        name: t('footer-website-redesign'),
+        url: `/${lang}/services/website-redesign`,
+      },
+      {
+        name: t('footer-custom-projects'),
+        url: `/${lang}/services/custom-projects`,
+      },
     ],
     [
       { name: t('footer-company'), header: true, url: `#${lang}/home` },
