@@ -48,6 +48,17 @@
     white-space: nowrap;
   }
 
+  .navbar-drawer-toggler {
+    display: flex;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    z-index: 999;
+  }
+
   @media (min-width: $md) {
     max-height: 100px;
 
@@ -61,6 +72,12 @@
 
     .nuc-lang-switcher {
       display: flex;
+    }
+  }
+
+  @media (min-width: $lg) {
+    .navbar-drawer-toggler {
+      display: none;
     }
   }
 }

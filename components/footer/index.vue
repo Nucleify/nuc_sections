@@ -81,8 +81,10 @@ const year = new Date().getFullYear()
 const companyLink =
   'https://aleo.com/pl/firma/atomic-it-spolka-z-ograniczona-odpowiedzialnoscia'
 
+const isDevContext = computed(() => route.path.includes('/dev'))
+
 const columns = computed(() => {
   const lang = (route.params.lang as string) || 'en'
-  return getColumns(lang, t)
+  return getColumns(lang, t, isDevContext.value ? '/dev' : '')
 })
 </script>

@@ -6,44 +6,44 @@ export interface FooterLink {
   header?: boolean
 }
 
-export function getColumns(lang: string, t: Composer['t']): FooterLink[][] {
+export function getColumns(
+  lang: string,
+  t: Composer['t'],
+  prefix = ''
+): FooterLink[][] {
+  const b = `/${lang}${prefix}`
+
   return [
     [
-      { name: t('footer-services'), header: true, url: `/${lang}/services` },
+      { name: t('footer-services'), header: true, url: `${b}/services` },
       {
         name: t('footer-business-websites'),
-        url: `/${lang}/services/business-websites`,
+        url: `${b}/services/business-websites`,
       },
-      {
-        name: t('footer-ecommerce'),
-        url: `/${lang}/services/ecommerce-stores`,
-      },
-      {
-        name: t('footer-landing-pages'),
-        url: `/${lang}/services/landing-pages`,
-      },
+      { name: t('footer-ecommerce'), url: `${b}/services/ecommerce-stores` },
+      { name: t('footer-landing-pages'), url: `${b}/services/landing-pages` },
       {
         name: t('footer-website-redesign'),
-        url: `/${lang}/services/website-redesign`,
+        url: `${b}/services/website-redesign`,
       },
       {
         name: t('footer-custom-projects'),
-        url: `/${lang}/services/custom-projects`,
+        url: `${b}/services/custom-projects`,
       },
     ],
     [
       { name: t('footer-company'), header: true, url: `#${lang}/home` },
-      { name: t('footer-about'), url: `/${lang}/about-us#start` },
-      { name: t('footer-process'), url: `/${lang}/process` },
+      { name: t('footer-about'), url: `${b}/about-us#start` },
+      { name: t('footer-process'), url: `${b}/process` },
       { name: t('footer-contact'), url: '#contact' },
       { name: t('footer-faq'), url: '#faq' },
     ],
     [
-      { name: t('footer-legal'), header: true, url: `/${lang}/privacy-policy` },
-      { name: t('footer-privacy-policy'), url: `/${lang}/privacy-policy` },
-      { name: t('footer-terms'), url: `/${lang}/terms-of-service` },
-      { name: t('footer-cookies'), url: `/${lang}/cookies` },
-      { name: t('footer-gdpr'), url: `/${lang}/gdpr` },
+      { name: t('footer-legal'), header: true, url: `${b}/privacy-policy` },
+      { name: t('footer-privacy-policy'), url: `${b}/privacy-policy` },
+      { name: t('footer-terms'), url: `${b}/terms-of-service` },
+      { name: t('footer-cookies'), url: `${b}/cookies` },
+      { name: t('footer-gdpr'), url: `${b}/gdpr` },
     ],
   ]
 }

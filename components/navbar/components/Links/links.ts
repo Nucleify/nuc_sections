@@ -9,11 +9,11 @@ export function getNavLinks(
   return [
     {
       label: t('nav-home'),
-      href: `/${lang}/home`,
+      href: `/${lang}/dev`,
     },
     {
       label: t('nav-offer'),
-      href: `/${lang}/offer`,
+      href: `/${lang}/dev/offer`,
     },
     {
       label: t('nav-docs'),
