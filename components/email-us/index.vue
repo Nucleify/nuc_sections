@@ -53,8 +53,7 @@ import { navigateTo } from 'nuxt/app'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { getComponent } from 'atomic'
-
+import { getComponent } from 'nucleify'
 import { emailUsFormFieldKeys, getEmailUsTextFields } from './constants'
 import type {
   ContactFormDataInterface,

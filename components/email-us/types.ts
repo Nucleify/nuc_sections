@@ -1,6 +1,6 @@
 import type { Ref } from 'vue'
 
-import type { ComponentType } from 'atomic'
+import type { ComponentType } from 'nucleify'
 
 export interface ContactFormDataInterface {
   email: string

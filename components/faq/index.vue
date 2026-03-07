@@ -32,8 +32,11 @@
 </template>
 
 <script setup lang="ts">
-import type { NucQuestionObjectInterface, NucSectionFaqInterface } from 'atomic'
-import { questionRequests, useSplitQuestions } from 'atomic'
+import type {
+  NucQuestionObjectInterface,
+  NucSectionFaqInterface,
+} from 'nucleify'
+import { questionRequests, useSplitQuestions } from 'nucleify'
 
 const MOBILE_MAX_WIDTH = 992
 

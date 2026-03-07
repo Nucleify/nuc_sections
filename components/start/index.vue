@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import type { NucSectionStartInterface } from 'atomic'
+import type { NucSectionStartInterface } from 'nucleify'
 
 const props = defineProps<NucSectionStartInterface>()
 </script>
