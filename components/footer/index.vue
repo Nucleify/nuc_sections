@@ -71,6 +71,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { isMobile } from 'nucleify'
+
 import { getColumns } from './items'
 
 const route = useRoute()

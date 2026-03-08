@@ -40,6 +40,7 @@ import { useRoute } from 'nuxt/app'
 import { computed } from 'vue'
 
 import { useNavbar } from 'nucleify'
+
 import { NucNavbarDrawer, NucNavbarLinks } from './components'
 
 const route = useRoute()
