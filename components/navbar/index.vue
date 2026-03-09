@@ -39,9 +39,7 @@
 import { useRoute } from 'nuxt/app'
 import { computed } from 'vue'
 
-import { useNavbar } from 'nucleify'
-
-import { NucNavbarDrawer, NucNavbarLinks } from './components'
+import { NucNavbarDrawer, NucNavbarLinks, useNavbar } from 'nucleify'
 
 const route = useRoute()
 const lang = computed(() => (route.params.lang as string) || 'en')
