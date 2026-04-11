@@ -2,7 +2,11 @@
   <section id="footer">
     <nuc-grid-background />
     <div class="footer-cta">
-      <ad-heading :tag="2" :text="t('footer-cta-heading')" class="cta-heading" />
+      <ad-heading
+        :tag="2"
+        :text="t('footer-cta-heading')"
+        class="cta-heading"
+      />
       <p class="cta-subheading">{{ t('footer-cta-subheading') }}</p>
       <nuc-section-email-us-dialog />
     </div>
@@ -56,9 +60,7 @@
             {{ t('footer-company-email') }}
           </a>
         </div>
-        <span class="copyright">
-          {{ t('footer-copyright', { year }) }}
-        </span>
+        <span class="copyright"> {{ t('footer-copyright', { year }) }} </span>
       </div>
     </div>
     <nuc-animation-hexagons />

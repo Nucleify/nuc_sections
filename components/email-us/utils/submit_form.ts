@@ -2,6 +2,7 @@ import type { UseToastInterface } from 'nucleify'
 import { apiHandle, useAtomicToast } from 'nucleify'
 
 import type { SubmitFormOptionsInterface } from '../types'
+
 import { validateContactForm } from './validate_form'
 
 export async function submitContactForm(

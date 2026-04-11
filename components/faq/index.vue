@@ -7,7 +7,10 @@
       <span>Q</span>
     </ad-paragraph>
 
-    <div class="faq-section-questions" :class="{ 'faq-section-questions--single': isMobileView }">
+    <div
+      class="faq-section-questions"
+      :class="{ 'faq-section-questions--single': isMobileView }"
+    >
       <!-- Mobile: one column, order 1→2→3→4→5→6... -->
       <ad-accordion
         v-if="isMobileView && allQuestions.length"
@@ -16,16 +19,8 @@
       />
       <!-- Desktop: two columns, layout q1|q2, q3|q4... -->
       <template v-if="!isMobileView">
-        <ad-accordion
-          v-if="column1.length"
-          :panels="column1"
-          ad-type="main"
-        />
-        <ad-accordion
-          v-if="column2.length"
-          :panels="column2"
-          ad-type="main"
-        />
+        <ad-accordion v-if="column1.length" :panels="column1" ad-type="main" />
+        <ad-accordion v-if="column2.length" :panels="column2" ad-type="main" />
       </template>
     </div>
   </div>

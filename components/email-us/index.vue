@@ -17,10 +17,15 @@
             :option-value="field.options ? 'value' : undefined"
             ad-type="main"
           />
-          <small v-if="errors[field.id]" class="error-message">{{ errors[field.id] }}</small>
+          <small v-if="errors[field.id]" class="error-message">
+            {{ errors[field.id] }}
+          </small>
         </div>
 
-        <div class="form-group checkbox-group" v-tooltip.left="t('form-consent-tooltip')">
+        <div
+          class="form-group checkbox-group"
+          v-tooltip.left="t('form-consent-tooltip')"
+        >
           <ad-checkbox
             ad-type="main"
             inputId="consent"
@@ -29,7 +34,9 @@
             :invalid="!!errors.consent"
           />
           <ad-label :label="$t('form-consent')" for="consent" />
-          <small v-if="errors.consent" class="error-message">{{ errors.consent }}</small>
+          <small v-if="errors.consent" class="error-message"
+            >{{ errors.consent }}</small
+          >
         </div>
 
         <nuc-submit-button

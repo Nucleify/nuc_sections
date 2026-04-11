@@ -4,7 +4,7 @@
       <div class="contact-decoration contact-decoration-left">
         <Icon name="mdi:email-outline" />
       </div>
-      
+
       <div class="contact-left">
         <span class="contact-badge">{{ $t('contact-badge') }}</span>
         <h3 class="contact-heading">{{ $t('contact-heading') }}</h3>
@@ -12,7 +12,7 @@
           {{ $t('contact-text') }}
           <span class="highlight">{{ $t('contact-text-highlight') }}</span>
         </p>
-        
+
         <div class="contact-features">
           <div class="feature">
             <Icon name="mdi:clock-fast" />
@@ -37,7 +37,7 @@
           business@nucleify.io
         </a>
       </div>
-      
+
       <div class="contact-decoration contact-decoration-right">
         <Icon name="mdi:rocket-launch-outline" />
       </div>

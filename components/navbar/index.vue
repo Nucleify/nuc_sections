@@ -2,7 +2,11 @@
 <template>
   <nav class="navbar" :class="{ 'navbar--dev': isDevPage }">
     <div class="container">
-      <a class="application-header" :href="`/${lang}/${isDevPage ? 'dev' : 'home'}`" aria-label="Home">
+      <a
+        class="application-header"
+        :href="`/${lang}/${isDevPage ? 'dev' : 'home'}`"
+        aria-label="Home"
+      >
         <ad-logo ad-type="main" />
 
         <ad-heading
