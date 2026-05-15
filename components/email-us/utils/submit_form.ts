@@ -3,6 +3,7 @@ import { apiHandle, useAtomicToast } from 'nucleify'
 
 import type { SubmitFormOptionsInterface } from '../types'
 
+import { getContactFormSubmitUrl } from './contact_form_submit_url'
 import { validateContactForm } from './validate_form'
 
 export async function submitContactForm(
@@ -21,23 +22,25 @@ export async function submitContactForm(
 
   const { flashToast }: UseToastInterface = useAtomicToast()
 
-  await apiHandle<{ success: boolean; message: string }>({
-    url: apiUrl() + '/contact-form',
-    method: 'POST',
-    data: {
-      email: form.value.email,
-      website_type: form.value.website_type,
-    },
-    onSuccess: () => {
-      flashToast(t('form-success-message'), 'success')
-      form.value = {
-        email: '',
-        website_type: '',
-        consent: false,
-      }
-      onSuccess()
-    },
-  })
-
-  isSubmitting.value = false
+  try {
+    await apiHandle<{ success: boolean; message: string }>({
+      url: getContactFormSubmitUrl(),
+      method: 'POST',
+      data: {
+        email: form.value.email,
+        website_type: form.value.website_type,
+      },
+      onSuccess: () => {
+        flashToast(t('form-success-message'), 'success')
+        form.value = {
+          email: '',
+          website_type: '',
+          consent: false,
+        }
+        onSuccess()
+      },
+    })
+  } finally {
+    isSubmitting.value = false
+  }
 }

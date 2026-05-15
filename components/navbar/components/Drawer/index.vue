@@ -2,6 +2,6 @@
   <Drawer position="right" :block-scroll="true" class="navbar-drawer">
     <slot />
     <nuc-authors />
-    <nuc-language-switcher />
+    <nuc-lang-switcher />
   </Drawer>
 </template>
