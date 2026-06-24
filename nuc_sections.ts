@@ -7,7 +7,7 @@ import {
   NucSectionFaq,
   NucSectionFooter,
   NucSectionNavbar,
-} from './components'
+} from 'nucleify'
 
 export function registerNucSections(app: App<Element>): void {
   app

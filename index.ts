@@ -1,9 +1,24 @@
-/**
- *  Module's main file export
- */
 export * from './nuc_sections'
 
-/**
- *  Folders exports
- */
-export * from './components'
+export { default as NucSectionContact } from './contact/index.vue'
+export * from './email-us/constants/form_field_keys'
+export * from './email-us/constants/text_fields'
+export { default as NucSectionEmailUsDialog } from './email-us/dialog/index.vue'
+export * from './email-us/dialog/interfaces'
+export { default as NucSectionEmailUs } from './email-us/index.vue'
+export * from './email-us/types/interfaces'
+export * from './email-us/utils/submit_form'
+export * from './email-us/utils/validate_form'
+export { default as NucSectionFaq } from './faq/index.vue'
+export * from './faq/interfaces'
+export * from './faq/use_split_questions'
+export { default as NucSectionFooter } from './footer/index.vue'
+export * from './footer/interfaces'
+export * from './footer/items'
+export { default as NucNavbarDrawer } from './navbar/drawer/index.vue'
+export { default as NucSectionNavbar } from './navbar/index.vue'
+export * from './navbar/interfaces'
+export { default as NucNavbarLinks } from './navbar/links/index.vue'
+export * from './navbar/links/interfaces'
+export * from './navbar/links/list'
+export * from './navbar/utils/use_navbar'
