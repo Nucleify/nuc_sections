@@ -1,5 +1,4 @@
 #contact {
-  padding: 3em 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +15,7 @@
     overflow: hidden;
     max-width: 1210px;
     width: 100%;
+    margin: 0 auto;
 
     &::before {
       content: '';
@@ -158,8 +158,6 @@
   }
 
   @media (min-width: $md) {
-    padding: 6em 2em;
-
     .contact-banner {
       flex-direction: row;
       justify-content: space-between;

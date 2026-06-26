@@ -17,38 +17,40 @@ export function NucSectionContact(): JSX.Element {
 
   return (
     <div id="contact">
-      <div className="contact-banner container">
-        <div className="contact-decoration contact-decoration-left">
-          <AdIcon className="iconify" icon="prime:envelope" />
-        </div>
-
-        <div className="contact-left">
-          <span className="contact-badge">{t('contact-badge')}</span>
-          <h3 className="contact-heading">{t('contact-heading')}</h3>
-          <p className="contact-text">
-            {contactText}{' '}
-            <span className="highlight">{contactTextHighlight}</span>
-          </p>
-
-          <div className="contact-features">
-            {contactFeatures.map((feature) => (
-              <div className="feature" key={feature.icon}>
-                <AdIcon className="iconify" icon={feature.icon} />
-                <span>{feature.text}</span>
-              </div>
-            ))}
+      <div className="container">
+        <div className="contact-banner">
+          <div className="contact-decoration contact-decoration-left">
+            <AdIcon className="iconify" icon="prime:envelope" />
           </div>
-        </div>
 
-        <div className="contact-divider" />
+          <div className="contact-left">
+            <span className="contact-badge">{t('contact-badge')}</span>
+            <h3 className="contact-heading">{t('contact-heading')}</h3>
+            <p className="contact-text">
+              {contactText}{' '}
+              <span className="highlight">{contactTextHighlight}</span>
+            </p>
 
-        <div className="contact-right">
-          <NucSectionEmailUsDialog buttonClass="contact-button" />
-          <span className="contact-email">business@nucleify.io</span>
-        </div>
+            <div className="contact-features">
+              {contactFeatures.map((feature) => (
+                <div className="feature" key={feature.icon}>
+                  <AdIcon className="iconify" icon={feature.icon} />
+                  <span>{feature.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div className="contact-decoration contact-decoration-right">
-          <AdIcon className="iconify" icon="prime:send" />
+          <div className="contact-divider" />
+
+          <div className="contact-right">
+            <NucSectionEmailUsDialog buttonClass="contact-button" />
+            <span className="contact-email">business@nucleify.io</span>
+          </div>
+
+          <div className="contact-decoration contact-decoration-right">
+            <AdIcon className="iconify" icon="prime:send" />
+          </div>
         </div>
       </div>
     </div>

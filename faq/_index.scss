@@ -1,10 +1,10 @@
-.faq-section {
+#faq .faq-section {
   width: calc(100% + 2rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 0 1rem;
   margin: 0 -1rem;
   position: relative;
 
@@ -38,6 +38,7 @@
     grid-auto-flow: row;
     align-items: start;
     max-width: 1210px;
+    margin: 0 auto;
 
     .p-accordion {
       display: flex;
@@ -101,8 +102,6 @@
   }
 
   @media (min-width: $md) {
-    padding: 5em 1rem;
-
     &-header {
       font-size: 2.5rem;
       margin-bottom: 1.5em;
@@ -116,8 +115,6 @@
   }
 
   @media (min-width: $xl) {
-    padding: 6rem 1rem;
-
     &-header {
       font-size: 2.75rem;
     }
@@ -132,9 +129,7 @@
 html:not(.p-dark) .faq-section {
   background: linear-gradient(168deg, #091f17 0%, #0e3325 30%, #103a2b 50%, #0c2e20 75%, #071a12 100%);
   border-radius: 0;
-  padding: 5em 1.5em 4.5em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  padding: 0 1.5em;
   position: relative;
   overflow: hidden;
 
@@ -285,7 +280,7 @@ html:not(.p-dark) .faq-section {
   }
 
   @media (min-width: $md) {
-    padding: 6em 3em 5.5em;
+    padding: 0 3em;
 
     &-header {
       margin-bottom: 2em;
@@ -297,6 +292,6 @@ html:not(.p-dark) .faq-section {
   }
 
   @media (min-width: $xl) {
-    padding: 7em 4.5em 6em;
+    padding: 0 4.5em;
   }
 }
