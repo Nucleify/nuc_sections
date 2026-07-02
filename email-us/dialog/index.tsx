@@ -9,7 +9,7 @@ const SECTION_EMAIL_DIALOG_CLASS = 'section-email-us-dialog'
 
 const emailDialogClosePt = {
   closeButton: {
-    root: { 'ad-type': 'main' as const },
+    root: { 'nui-type': 'main' as const },
   },
 }
 

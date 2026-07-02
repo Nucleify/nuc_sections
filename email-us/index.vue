@@ -15,7 +15,7 @@
             :options="field.options"
             :option-label="field.options ? 'label' : undefined"
             :option-value="field.options ? 'value' : undefined"
-            ad-type="main"
+            nui-type="main"
           />
           <small v-if="errors[field.id]" class="error-message">
             {{ errors[field.id] }}
@@ -27,7 +27,7 @@
           v-tooltip.left="t('form-consent-tooltip')"
         >
           <ad-checkbox
-            ad-type="main"
+            nui-type="main"
             inputId="consent"
             v-model="form.consent"
             :binary="true"

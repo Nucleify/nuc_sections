@@ -15,7 +15,7 @@
       <div class="top">
         <div class="brand">
           <ad-anchor :href="`/${route.params.lang}/home#start`" class="header">
-            <ad-logo :dimensions="isMobile() ? 36 : 48" ad-type="main" />
+            <ad-logo :dimensions="isMobile() ? 36 : 48" nui-type="main" />
             <ad-heading :tag="3" text="Nucleify" class="name" />
           </ad-anchor>
         </div>

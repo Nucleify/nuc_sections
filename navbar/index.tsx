@@ -64,7 +64,7 @@ export function NucSectionNavbar(): JSX.Element {
           className="application-header"
           href={homeHref}
         >
-          <AdLogo adType="main" />
+          <AdLogo nuiType="main" />
           {isDevPage ? (
             <h1 className="application-header-text">Nucleify</h1>
           ) : null}

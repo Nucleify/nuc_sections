@@ -16,7 +16,7 @@
       :pt="{
         pcCloseButton: {
           root: {
-          'ad-type': 'main',
+          'nui-type': 'main',
           }
         }
       }"

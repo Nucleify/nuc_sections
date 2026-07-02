@@ -10,7 +10,7 @@
         :href="`/${lang}/${isDevPage ? 'dev' : 'home'}`"
         aria-label="Home"
       >
-        <ad-logo ad-type="main" />
+        <ad-logo nui-type="main" />
 
         <ad-heading
           v-if="isDevPage"

@@ -96,7 +96,7 @@ export function NucSectionEmailUs({
 
   const renderField = (field: FormFieldInterface): JSX.Element => {
     const commonProps = {
-      adType: 'main',
+      nuiType: 'main',
       id: field.id,
       placeholder: field.placeholder,
       invalid: !!errors[field.id],
@@ -146,7 +146,7 @@ export function NucSectionEmailUs({
 
         <div className="form-group checkbox-group">
           <AdCheckbox
-            adType="main"
+            nuiType="main"
             className="p-checkbox"
             checked={form.consent}
             inputId="consent"

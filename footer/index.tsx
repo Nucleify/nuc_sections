@@ -48,7 +48,7 @@ export function NucSectionFooter(): JSX.Element {
 
           <div className="brand">
             <AdAnchor className="header" href="#start">
-              <AdLogo dimensions={logoSize} adType="main" />
+              <AdLogo dimensions={logoSize} nuiType="main" />
               <h1 className="name">Nucleify</h1>
             </AdAnchor>
           </div>
